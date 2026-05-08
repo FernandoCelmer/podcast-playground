@@ -1,0 +1,13 @@
+Inteligência Artificial Generativa
+
+A inteligência artificial generativa é uma categoria de IA capaz de criar conteúdo novo,
+incluindo texto, imagens, código e áudio. Modelos como GPT, Claude e Gemini revolucionaram
+a forma como interagimos com computadores.
+
+O treinamento desses modelos utiliza enormes quantidades de dados textuais da internet.
+Através de um processo chamado aprendizado auto-supervisionado, o modelo aprende padrões
+estatísticos da linguagem e desenvolve a capacidade de gerar respostas coerentes.
+
+Uma tendência recente é a execução de modelos menores localmente. Ferramentas como Ollama
+permitem rodar modelos de linguagem no próprio computador, sem depender de APIs pagas ou
+conexão com a internet. Isso democratiza o acesso à IA e aumenta a privacidade dos dados.
