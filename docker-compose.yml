@@ -1,0 +1,9 @@
+services:
+  podcast:
+    build: .
+    container_name: podcast-playground
+    volumes:
+      - ./output:/app/output
+      - ./examples:/app/examples
+    entrypoint: ["python", "-m", "podcast_playground"]
+    command: ["say", "Hello world", "--engine", "parler", "-o", "output/output.wav"]
