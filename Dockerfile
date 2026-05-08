@@ -9,8 +9,10 @@ RUN apt-get update && apt-get install -y \
 COPY requirements-parler.txt .
 RUN pip install --no-cache-dir -r requirements-parler.txt
 
-COPY . .
-RUN pip install --no-cache-dir -e .
+COPY src/ src/
+COPY pyproject.toml .
+COPY examples/ examples/
+RUN pip install --no-cache-dir --no-deps -e .
 
 RUN mkdir -p /app/output
 

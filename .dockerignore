@@ -1,0 +1,11 @@
+.git
+.venv
+venv
+output
+*.wav
+*.mp3
+__pycache__
+*.pyc
+.code_quality
+poetry.lock
+.temp
