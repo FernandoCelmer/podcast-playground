@@ -1,0 +1,8 @@
+HOST_A: Welcome to the show! Today we're diving into something really cool, artificial intelligence and how it's changing everything.
+HOST_B: Yeah, it's wild how fast things are moving. Just a few years ago, most people had never even heard of large language models.
+HOST_A: Exactly. And now we have open source models that you can run on your own laptop. No cloud, no API keys, completely free.
+HOST_B: That's the part I love. The democratization of AI. You don't need a huge budget to experiment anymore.
+HOST_A: So let's break it down. What are the key things people should know about running AI locally?
+HOST_B: First, you need to understand that smaller models can be surprisingly good. You don't always need the biggest model.
+HOST_A: Great point. And the hardware requirements keep dropping too.
+HOST_B: Absolutely. Thanks for listening everyone, and we'll see you next time!
