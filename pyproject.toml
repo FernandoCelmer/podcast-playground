@@ -40,7 +40,7 @@ dependencies = [
     "edge-tts",
     "pydub",
     "bark-ml",
-    "parler-tts>=1.0.0",
+    "parler-tts>=0.2.0",
     "transformers>=4.43.0",
     "torch>=2.1.0",
 ]
