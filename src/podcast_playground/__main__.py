@@ -38,7 +38,10 @@ def main() -> None:
     say_cmd.add_argument(
         "--voice",
         default="narrator",
-        help="Voice preset: host_a, host_b, narrator, casual",
+        help=(
+            "Voice preset:"
+            " host_a, host_b, narrator, casual"
+        ),
     )
     say_cmd.add_argument(
         "--output",

@@ -8,7 +8,11 @@ from pathlib import Path
 import numpy as np
 import soundfile as sf
 
-from podcast_playground.engines import ENGINES, BaseEngine
+from podcast_playground.engines.base import BaseEngine
+from podcast_playground.engines import (
+    ENGINES,
+    get_engine_class,
+)
 from podcast_playground.script import (
     DialogueLine,
     generate_script,
@@ -23,13 +27,8 @@ def create_engine(
     **kwargs,
 ) -> BaseEngine:
     """Create TTS engine by name."""
-    engine_cls = ENGINES.get(name)
-    if engine_cls is None:
-        raise ValueError(
-            f"Unknown engine '{name}'."
-            f" Options: {list(ENGINES.keys())}",
-        )
-    return engine_cls(**kwargs)
+    cls = get_engine_class(name)
+    return cls(**kwargs)
 
 
 @dataclass
