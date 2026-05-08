@@ -8,6 +8,19 @@ from podcast_playground.core import (
 )
 from podcast_playground.engines import ENGINES
 
+ENGINE_ARG = {
+    "flags": ["--engine"],
+    "kwargs": {
+        "choices": list(ENGINES.keys()),
+        "default": "edge",
+        "help": (
+            "TTS engine: edge (free, cloud),"
+            " bark (local, GPU),"
+            " parler (local, GPU)"
+        ),
+    },
+}
+
 
 def main() -> None:
     """Parse args and run podcast generation."""
@@ -18,16 +31,6 @@ def main() -> None:
             " with multiple TTS engines."
         ),
     )
-    parser.add_argument(
-        "--engine",
-        choices=list(ENGINES.keys()),
-        default="edge",
-        help=(
-            "TTS engine: edge (free, cloud),"
-            " bark (local, GPU),"
-            " parler (local, GPU)"
-        ),
-    )
     subparsers = parser.add_subparsers(dest="command")
 
     say_cmd = subparsers.add_parser(
@@ -35,6 +38,10 @@ def main() -> None:
         help="Generate speech from text",
     )
     say_cmd.add_argument("text", help="Text to speak")
+    say_cmd.add_argument(
+        *ENGINE_ARG["flags"],
+        **ENGINE_ARG["kwargs"],
+    )
     say_cmd.add_argument(
         "--voice",
         default="narrator",
@@ -58,6 +65,10 @@ def main() -> None:
         help="Path to script file (HOST_A: text format)",
     )
     script_cmd.add_argument(
+        *ENGINE_ARG["flags"],
+        **ENGINE_ARG["kwargs"],
+    )
+    script_cmd.add_argument(
         "--output",
         "-o",
         default="podcast.wav",
@@ -68,6 +79,10 @@ def main() -> None:
         help="Source text -> LLM script -> podcast audio",
     )
     gen_cmd.add_argument("file", help="Source text file")
+    gen_cmd.add_argument(
+        *ENGINE_ARG["flags"],
+        **ENGINE_ARG["kwargs"],
+    )
     gen_cmd.add_argument(
         "--model",
         default="llama3",
