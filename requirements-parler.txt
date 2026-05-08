@@ -1,0 +1,12 @@
+torch==2.2.2
+parler-tts==0.2.3
+transformers==4.46.1
+accelerate
+descript-audio-codec-unofficial
+descript-audiotools-unofficial
+sentencepiece
+protobuf>=4.0.0
+soundfile>=0.12.0
+numpy>=1.24.0,<2
+pydub
+edge-tts
