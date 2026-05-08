@@ -1,9 +1,9 @@
 services:
-  podcast:
+  api:
     build: .
     container_name: podcast-playground
+    ports:
+      - "8000:8000"
     volumes:
       - ./output:/app/output
-      - ./examples:/app/examples
-    entrypoint: ["python", "-m", "podcast_playground"]
-    command: ["say", "Hello world", "--engine", "parler", "-o", "output/output.wav"]
+    restart: unless-stopped

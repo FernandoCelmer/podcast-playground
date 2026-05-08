@@ -12,4 +12,8 @@ RUN pip install --no-cache-dir -r requirements-parler.txt
 COPY . .
 RUN pip install --no-cache-dir -e .
 
-ENTRYPOINT ["python", "-m", "podcast_playground"]
+RUN mkdir -p /app/output
+
+EXPOSE 8000
+
+CMD ["uvicorn", "podcast_playground.api:app", "--host", "0.0.0.0", "--port", "8000"]
